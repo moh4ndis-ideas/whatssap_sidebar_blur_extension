@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "name": "WhatsApp Blur Contacts",
+  "name": "WhatsApp Blur Contactsssss",
   "version": "1.0",
   "description": "Blur WhatsApp Web contact names until hovered",
   "permissions": ["scripting", "tabs"],
@@ -10,5 +10,11 @@
       "js": ["content.js"],
       "css": ["styles.css"]
     }
-  ]
+  ],
+  "icons": {
+    "16": "assets/logo.png",
+    "32": "assets/logo.png",
+    "48": "assets/logo.png",
+    "128": "assets/logo.png"
+  }
 }
