@@ -41,6 +41,13 @@ function observeSidebar(blurEnabled) {
   observer.observe(document.body, { childList: true, subtree: true });
 }
 
+// Initial load
+chrome.storage.sync.get("blurEnabled", (data) => {
+  const enabled = data.blurEnabled ?? true;
+  setBlur(enabled);
+  observeSidebar(enabled);
+});
+
 // Listen for changes and apply/remove blur instantly
 chrome.storage.onChanged.addListener((changes) => {
   if (changes.blurEnabled) {
@@ -48,13 +55,6 @@ chrome.storage.onChanged.addListener((changes) => {
     setBlur(enabled);
     observeSidebar(enabled);
   }
-});
-
-// Initial load
-chrome.storage.sync.get("blurEnabled", (data) => {
-  const enabled = data.blurEnabled ?? true;
-  setBlur(enabled);
-  observeSidebar(enabled);
 });
 
 console.log("WhatsApp Blur Contacts extension loaded.");
