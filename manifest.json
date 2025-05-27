@@ -1,19 +1,25 @@
 {
   "manifest_version": 3,
   "name": "WhatsApp Blur Contacts",
-  "version": "1.0",
+  "version": "1.1",
   "description": "Blur WhatsApp Web contact names until hovered",
-  "permissions": ["scripting", "tabs"],
+  "permissions": ["storage"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "assets/logo.png",
+      "48": "assets/logo.png",
+      "128": "assets/logo.png"
+    }
+  },
   "content_scripts": [
     {
       "matches": ["https://web.whatsapp.com/*"],
-      "js": ["content.js"],
-      "css": ["styles.css"]
+      "js": ["content.js"]
     }
   ],
   "icons": {
     "16": "assets/logo.png",
-    "32": "assets/logo.png",
     "48": "assets/logo.png",
     "128": "assets/logo.png"
   }
